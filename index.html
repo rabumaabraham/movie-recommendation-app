@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation App</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/favorites.css">
+    <link rel="stylesheet" href="css/genre.css">
+    <link rel="stylesheet" href="css/popular.css">
+    <link rel="stylesheet" href="css/random.css">
+    <link rel="stylesheet" href="css/search.css">
+</head>
+<body>
+    <header>
+        <h1>Movie Recommendation App</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="popularMoviesNav">Popular Movies</a></li>
+                <li><a href="#" id="genreNav">Genre-Based Recommendations</a></li>
+                <li><a href="#" id="favoritesNav">Favorite Movies</a></li>
+                <li><a href="#" id="randomMovieNav">Random Movie</a></li>
+                <li><a href="#" id="searchNav">Search Movies</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Popular Movies Section (initially hidden) -->
+        <section id="popularMoviesSection" style="display: none;">
+            <h2>Popular Movies</h2>
+            <div id="popularMoviesDisplay"></div>
+        </section>
+
+        <!-- Genre Recommendations Section (initially hidden) -->
+        <section id="genreSection" style="display: none;">
+            <h2>Genre-Based Recommendations</h2>
+            <div id="genreDisplay"></div>
+        </section>
+
+        <!-- Favorites Section (initially hidden) -->
+        <section id="favoritesSection" style="display: none;">
+            <h2>Your Favorite Movies</h2>
+            <div id="favoritesDisplay"></div>
+        </section>
+
+        <!-- Random Movie Section (initially hidden) -->
+        <section id="randomMovieSection" style="display: none;">
+            <h2>Random Movie</h2>
+            <div id="randomMovieDisplay"></div>
+        </section>
+
+        <!-- Search Section (initially hidden) -->
+        <section id="searchSection" style="display: none;">
+            <h2>Search Movies</h2>
+            <input type="text" id="searchInput" placeholder="Type a movie title...">
+            <button id="searchButton">Search</button>
+            <div id="searchResults"></div>
+        </section>
+    </main>
+
+    <!-- Add type="module" to each script tag -->
+    <script type="module" src="js/config.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/popular.js"></script>
+    <script type="module" src="js/genre.js"></script>
+    <script type="module" src="js/favorites.js"></script>
+    <script type="module" src="js/random.js"></script>
+    <script type="module" src="js/search.js"></script>
+</body>
+</html>
