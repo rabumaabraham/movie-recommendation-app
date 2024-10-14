@@ -1,0 +1,27 @@
+#randomMovieSection {
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-top: 20px;
+    background-color: #f9f9f9;
+}
+
+#randomMovieSection img {
+    width: 200px;
+    height: auto;
+    margin-top: 10px;
+}
+
+#fetchRandomMovieButton {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#fetchRandomMovieButton:hover {
+    background-color: #0056b3;
+}

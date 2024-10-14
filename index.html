@@ -28,9 +28,14 @@
     <main>
         <!-- Popular Movies Section (initially hidden) -->
         <section id="popularMoviesSection" style="display: none;">
-            <h2>Popular Movies</h2>
-            <div id="popularMoviesDisplay"></div>
+            <h1>Popular Movies</h1>
+            <div id="movie-list"></div>
+            <div class="pagination">
+                <button id="previousButton" style="display: none;">Previous</button>
+                <button id="nextButton" style="display: none;">Next</button>
+            </div>
         </section>
+        
 
         <!-- Genre Recommendations Section (initially hidden) -->
         <section id="genreSection" style="display: none;">
@@ -45,10 +50,20 @@
         </section>
 
         <!-- Random Movie Section (initially hidden) -->
+         <!-- 
         <section id="randomMovieSection" style="display: none;">
             <h2>Random Movie</h2>
             <div id="randomMovieDisplay"></div>
         </section>
+        -->
+
+        <!-- Random Movie Section (initially hidden) -->
+<section id="randomMovieSection" style="display: none;">
+    <h1>Random Movie</h1>
+    <div id="random-movie-detail"></div>
+    <button id="fetchRandomMovieButton">Get Random Movie</button>
+</section>
+
 
         <!-- Search Section (initially hidden) -->
         <section id="searchSection" style="display: none;">

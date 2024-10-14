@@ -1,0 +1,39 @@
+/* popular.css */
+
+#popularMoviesSection {
+    padding: 20px;
+}
+
+.movie-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    display: inline-block;
+    width: 200px;
+    text-align: center;
+}
+
+.movie-item img {
+    width: 100%;
+    height: auto;
+}
+
+.pagination {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.pagination button {
+    padding: 10px 20px;
+    margin: 0 10px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination button:hover {
+    background-color: #0056b3;
+}
