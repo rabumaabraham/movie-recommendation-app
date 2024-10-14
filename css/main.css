@@ -1,3 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /*======= Main theme colors =======*/
+  --first-color: #1c1c1c; /* Dark gray for a sleek look */
+  --second-color: #e63946; /* Bright red for accents */
+  --third-color: #f1faee; /* Light background color for contrast */
+
+  /*======= Hover colors =======*/
+  --hover-color: #d62839; /* A slightly darker shade of red for hover effects */
+
+  /*======= Background colors =======*/
+  --body-bg-color: #f8f9fa; /* Light background for content readability */
+  --card-bg-color: #ffffff; /* White for cards to stand out */
+  --modal-bg-color: #ffffff; /* White for modals to maintain consistency */
+  --bg-transparent-color: rgba(0, 0, 0, 0.1); /* Subtle background for overlays */
+  --transparent-color-01: rgba(0, 0, 0, 0.1); /* For light overlays */
+  --transparent-color-02: rgba(206, 17, 38, 0.1); /* Lighter red for secondary overlays */
+  --line-color: #d7d7d7; /* Gray for subtle borders and lines */
+
+  /*======= Color Filter =======*/
+  --color-filter: invert(1);
+
+  /*======= Box shadow =======*/
+  --box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Slightly darker shadow for depth */
+
+  /*======= Font size =======*/
+  --small-font-size: 0.9em;
+  --normal-font-size: 1em;
+
+  /*======= Scroll bar colors =======*/
+  --scroll-bar-color: #eaeaea; /* Light gray for scrollbars */
+  --scroll-thumb-color: #a0a0a0; /* Medium gray for scroll thumb */
+  --scroll-thumb-hover-color: #707070; /* Darker gray for hover state */
+}
+
+/* body */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
