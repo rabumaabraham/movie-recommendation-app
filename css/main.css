@@ -1,68 +1,282 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /*======= Main theme colors =======*/
-  --first-color: #1c1c1c; /* Dark gray for a sleek look */
-  --second-color: #e63946; /* Bright red for accents */
-  --third-color: #f1faee; /* Light background color for contrast */
+    /*======= Main theme colors =======*/
+    --first-color: #1c1c1c;
+    /* Dark gray for a sleek look */
+    --second-color: #e63946;
+    /* Bright red for accents */
+    --third-color: #f1faee;
+    /* Light background color for contrast */
 
-  /*======= Hover colors =======*/
-  --hover-color: #d62839; /* A slightly darker shade of red for hover effects */
+    /*======= Hover colors =======*/
+    --hover-color: #d62839;
+    /* A slightly darker shade of red for hover effects */
 
-  /*======= Background colors =======*/
-  --body-bg-color: #f8f9fa; /* Light background for content readability */
-  --card-bg-color: #ffffff; /* White for cards to stand out */
-  --modal-bg-color: #ffffff; /* White for modals to maintain consistency */
-  --bg-transparent-color: rgba(0, 0, 0, 0.1); /* Subtle background for overlays */
-  --transparent-color-01: rgba(0, 0, 0, 0.1); /* For light overlays */
-  --transparent-color-02: rgba(206, 17, 38, 0.1); /* Lighter red for secondary overlays */
-  --line-color: #d7d7d7; /* Gray for subtle borders and lines */
+    /*======= Background colors =======*/
+    --body-bg-color: #f8f9fa;
+    /* Light background for content readability */
+    --card-bg-color: #ffffff;
+    /* White for cards to stand out */
+    --modal-bg-color: #ffffff;
+    /* White for modals to maintain consistency */
+    --bg-transparent-color: rgba(0, 0, 0, 0.1);
+    /* Subtle background for overlays */
+    --transparent-color-01: rgba(0, 0, 0, 0.1);
+    /* For light overlays */
+    --transparent-color-02: rgba(206, 17, 38, 0.1);
+    /* Lighter red for secondary overlays */
+    --line-color: #d7d7d7;
+    /* Gray for subtle borders and lines */
 
-  /*======= Color Filter =======*/
-  --color-filter: invert(1);
+    /*======= Color Filter =======*/
+    --color-filter: invert(1);
 
-  /*======= Box shadow =======*/
-  --box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* Slightly darker shadow for depth */
+    /*======= Box shadow =======*/
+    --box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2);
+    /* Slightly darker shadow for depth */
 
-  /*======= Font size =======*/
-  --small-font-size: 0.9em;
-  --normal-font-size: 1em;
+    /*======= Font size =======*/
+    --small-font-size: 0.9em;
+    --normal-font-size: 1em;
 
-  /*======= Scroll bar colors =======*/
-  --scroll-bar-color: #eaeaea; /* Light gray for scrollbars */
-  --scroll-thumb-color: #a0a0a0; /* Medium gray for scroll thumb */
-  --scroll-thumb-hover-color: #707070; /* Darker gray for hover state */
+    /*======= Scroll bar colors =======*/
+    --scroll-bar-color: #eaeaea;
+    /* Light gray for scrollbars */
+    --scroll-thumb-color: #a0a0a0;
+    /* Medium gray for scroll thumb */
+    --scroll-thumb-hover-color: #707070;
+    /* Darker gray for hover state */
 }
 
 /* body */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
 }
 
+/* header */
 header {
-    background: #333;
-    color: #fff;
-    padding: 10px 0;
+    background-color: #141414;
+    /* Dark background similar to Netflix */
+    color: #ffffff;
+    /* White text for contrast */
+    padding: 20px;
+    /* Space around the header */
+    text-align: center;
+    /* Center align header content */
+}
+
+.header-container {
+    max-width: 1200px;
+    /* Limit width for large screens */
+    margin: 0 auto;
+    /* Center container */
+}
+
+/* Navigation styles */
+nav {
+    margin-top: 20px;
+    /* Space above navigation */
 }
 
 nav ul {
-    list-style: none;
+    list-style-type: none;
+    /* Remove bullet points */
     padding: 0;
+    /* Remove padding */
+    display: flex;
+    /* Flexbox for horizontal layout */
+    justify-content: center;
+    /* Center the nav items */
 }
 
 nav ul li {
-    display: inline;
-    margin: 0 10px;
+    margin: 0 15px;
+    /* Space between navigation items */
 }
 
-nav a {
-    color: #fff;
+nav ul li a {
+    color: #ffffff;
+    /* White text for links */
     text-decoration: none;
+    /* Remove underline from links */
+    font-weight: bold;
+    /* Bold text for links */
+    padding: 5px 10px;
+    /* Space around the link */
+    transition: background-color 0.3s, color 0.3s;
+    /* Smooth transition for hover effect */
+    border-radius: 5px;
+    /* Rounded corners for buttons */
 }
 
-h2 {
-    color: #333;
+nav ul li a:hover {
+    background-color: #e50914;
+    /* Red background on hover */
+    color: #ffffff;
+    /* Keep text white on hover */
+}
+
+/* home.css */
+#homeSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    /* Start aligning items from the top */
+    align-items: center;
+    height: 100vh;
+    /* Full viewport height */
+    background-image: url('/images/poster1.jpg');
+    /* Replace with your image path */
+    background-size: cover;
+    /* Cover full section */
+    background-position: center;
+    color: #ffcc00;
+    /* Text color */
+    text-align: center;
+    /* Center text */
+    padding-top: 20vh;
+    /* Pull the content down */
+}
+
+#homeSection h1 {
+    font-size: 3em;
+    /* Header font size */
+    margin: 0;
+}
+
+#homeSection p {
+    font-size: 1.5em;
+    /* Tagline font size */
+}
+
+/* Section styles */
+section {
+    padding: 20px;
+    /* Space around sections */
+    text-align: center;
+    /* Center text in all sections */
+}
+
+/* footer */
+footer {
+    background-color: #1c1c1c;
+    color: #ffffff;
+    padding: 40px 0;
+    text-align: center;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer .footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center items */
+}
+
+footer p {
+    margin: 10px 0;
+    font-size: 1.2em;
+}
+
+footer a {
+    color: #ffcc00;
+    /* Gold color for names */
+    text-decoration: none;
+    position: relative;
+    /* Needed for tooltip */
+    cursor: pointer;
+    /* Pointer for better UX */
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+/* Tooltip styling */
+.tooltip {
+    visibility: hidden;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 5px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    /* Position above the text */
+    left: 50%;
+    margin-left: -60px;
+    /* Center the tooltip */
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+footer a:hover .tooltip {
+    visibility: visible;
+    opacity: 1;
+    /* Show tooltip on hover */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    #homeSection {
+        padding-top: 10vh;
+        /* Less padding for smaller screens */
+        background-size: cover;
+        /* Ensure full coverage */
+    }
+
+    #homeSection h1 {
+        font-size: 2.5em;
+        /* Smaller header font size for mobile */
+    }
+
+    #homeSection p {
+        font-size: 1.2em;
+        /* Smaller tagline font size for mobile */
+    }
+
+    /* Adjust navigation styles for smaller screens */
+    nav ul {
+        flex-direction: column;
+        /* Stack items vertically */
+    }
+
+    nav ul li {
+        margin: 5px 0;
+        /* Space between navigation items */
+    }
+
+    section {
+        padding: 15px;
+        /* Less padding in sections */
+    }
+}
+
+@media (max-width: 480px) {
+    #homeSection {
+        padding-top: 5vh;
+        /* Even less padding for very small screens */
+    }
+
+    #homeSection h1 {
+        font-size: 2em;
+        /* Further reduce header font size */
+    }
+
+    #homeSection p {
+        font-size: 1em;
+        /* Further reduce tagline font size */
+    }
+
+    footer p {
+        font-size: 1em;
+        /* Adjust footer font size */
+    }
 }

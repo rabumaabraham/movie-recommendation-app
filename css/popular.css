@@ -1,39 +1,175 @@
-/* popular.css */
+html,
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    /* As you prefer this font */
+    background-color: #141414;
+    /* Dark background */
+    color: #ffffff;
+    /* Light text */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 #popularMoviesSection {
     padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    /* Responsive grid */
+    gap: 20px;
+    justify-items: center;
 }
 
 .movie-item {
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    background-color: #1c1c1c;
     padding: 10px;
-    margin: 10px;
-    display: inline-block;
-    width: 200px;
+    border-radius: 8px;
     text-align: center;
+    transition: transform 0.3s ease;
+    width: 100%;
+    max-width: 200px;
+}
+
+.movie-item:hover {
+    transform: scale(1.05);
+}
+
+.movie-item h3 {
+    font-size: 16px;
+    margin: 10px 0;
+    color: #ffcc00;
+    /* IMDb's yellow accent for movie titles */
+}
+
+.movie-item p {
+    font-size: 14px;
+    color: #cccccc;
+    /* Slightly lighter text for rating */
 }
 
 .movie-item img {
     width: 100%;
     height: auto;
-}
-
-.pagination {
-    margin-top: 20px;
-    text-align: center;
-}
-
-.pagination button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    border: none;
-    background-color: #007BFF;
-    color: white;
     border-radius: 5px;
-    cursor: pointer;
 }
 
-.pagination button:hover {
-    background-color: #0056b3;
+#nextButton,
+#previousButton {
+    background-color: #ffcc00;
+    color: #000000;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+#nextButton:hover,
+#previousButton:hover {
+    background-color: #e6b800;
+}
+
+.movie-item {
+    background-color: #1c1c1c;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.movie-item:hover {
+    transform: scale(1.05);
+    /* Adds a hover effect to highlight the movie item */
+}
+
+/* */
+#movie-details {
+    display: none;
+    /* Initially hidden */
+    padding: 40px;
+    /* Add more padding for breathing room */
+    background-color: #1c1c1c;
+    /* Dark background for contrast */
+    color: #ffffff;
+    /* White text for readability */
+    border-radius: 12px;
+    /* Softer corners */
+    margin: 20px auto;
+    /* Center the section */
+    min-height: 100vh;
+    /* Ensure full height */
+    box-sizing: border-box;
+    max-width: 800px;
+    /* Limit the width to make it centered and clean */
+    text-align: center;
+    /* Center text alignment */
+}
+
+#movie-details h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #ffcc00;
+    /* Highlight the movie title */
+}
+
+#movie-details p {
+    font-size: 18px;
+    /* Larger font for better readability */
+    line-height: 1.6;
+    /* Better line spacing */
+    margin: 10px 0;
+}
+
+#movie-details img {
+    width: 100%;
+    /* Keep the movie poster fully responsive */
+    max-width: 300px;
+    /* Limit the size of the image */
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+/* Center and style the overview */
+#movie-details .overview {
+    margin: 0 auto;
+    max-width: 600px;
+    /* Limit the width of the text */
+    text-align: justify;
+    /* Justify text for cleaner block appearance */
+    background-color: #2c2c2c;
+    /* Slightly different background for separation */
+    padding: 20px;
+    border-radius: 10px;
+    /* Add rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Slight shadow for emphasis */
+}
+
+/* Style for rating and release date */
+#movie-details .movie-info {
+    display: flex;
+    justify-content: space-around;
+    /* Space out rating and release date */
+    margin-bottom: 20px;
+}
+
+#movie-details .movie-info p {
+    background-color: #2c2c2c;
+    /* Separate text background */
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    /* Subtle shadow */
 }
