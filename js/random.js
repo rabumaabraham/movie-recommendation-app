@@ -1,52 +1,69 @@
 document.addEventListener("DOMContentLoaded", () => {
-    console.log("Random movie script loaded");
+    console.log("Random movies script loaded");
 });
 
-
-// random
-import { TMDB_API_KEY } from './config.js';  // Import your API key from config.js
+// Import your API key from config.js
+import { TMDB_API_KEY } from './config.js';
 
 const BASE_URL = 'https://api.themoviedb.org/3';
-const randomMovieSection = document.getElementById('randomMovieSection');
-const randomMovieDetail = document.getElementById('random-movie-detail');
-const fetchRandomMovieButton = document.getElementById('fetchRandomMovieButton');
+const randomMoviesSection = document.getElementById('randomMoviesSection');
+const randomMovieList = document.getElementById('random-movie-list');
+const nextRandomButton = document.getElementById('nextRandomButton');
+const previousRandomButton = document.getElementById('previousRandomButton');
 
-// Function to fetch a random movie
-async function fetchRandomMovie() {
+let currentPage = 1; // Start at the first page
+const moviesPerPage = 15; // Limit to 15 movies per page
+
+// Function to fetch random movies
+async function fetchRandomMovies(page) {
     try {
-        // Get a list of popular movies to select a random one
-        const response = await fetch(`${BASE_URL}/movie/popular?api_key=${TMDB_API_KEY}&language=en-US&page=1`);
-        
+        const response = await fetch(`${BASE_URL}/movie/popular?api_key=${TMDB_API_KEY}&language=en-US&page=${page}`);
+
+        // Check if the response is okay (status code 200)
         if (!response.ok) {
             throw new Error('Network response was not ok: ' + response.statusText);
         }
 
         const data = await response.json();
-        const movies = data.results;
-        
-        // Select a random movie from the list
-        const randomIndex = Math.floor(Math.random() * movies.length);
-        const randomMovie = movies[randomIndex];
 
-        // Display random movie details
-        randomMovieDetail.innerHTML = `
-            <h2>${randomMovie.title}</h2>
-            <p>Rating: ${randomMovie.vote_average}</p>
-            <p>${randomMovie.overview || 'No overview available.'}</p>
-            <img src="https://image.tmdb.org/t/p/w500${randomMovie.poster_path}" alt="${randomMovie.title}">
-        `;
+        // Clear existing movies
+        randomMovieList.innerHTML = '';
 
-        // Show the random movie section
-        randomMovieSection.style.display = 'block';
+        // Shuffle and select movies for the current page
+        const shuffledMovies = data.results.sort(() => 0.5 - Math.random()).slice(0, moviesPerPage);
+        shuffledMovies.forEach(movie => {
+            const movieItem = document.createElement('div');
+            movieItem.className = 'movie-item';
+            movieItem.innerHTML = `
+                <h3>${movie.title}</h3>
+                <p>Rating: ${movie.vote_average}</p>
+                <img src="https://image.tmdb.org/t/p/w500${movie.poster_path}" alt="${movie.title}">
+            `;
+            randomMovieList.appendChild(movieItem);
+        });
+
+        // Update pagination buttons
+        updateRandomPagination(data.page, data.total_pages);
+
+        // Show the random movies section
+        randomMoviesSection.style.display = 'block';
 
     } catch (error) {
-        console.error('Error fetching random movie:', error);
+        console.error('Error fetching random movies:', error);
     }
 }
 
-// Event listener for fetching a random movie
-fetchRandomMovieButton.addEventListener('click', fetchRandomMovie);
+// Function to update pagination buttons
+function updateRandomPagination(current, total) {
+    currentPage = current; // Update the current page
 
-// Call the function on initial load (if desired)
-fetchRandomMovie();
+    previousRandomButton.style.display = current > 1 ? 'block' : 'none'; // Show or hide the previous button
+    nextRandomButton.style.display = current < total ? 'block' : 'none'; // Show or hide the next button
+}
 
+// Event listeners for pagination buttons
+nextRandomButton.addEventListener('click', () => fetchRandomMovies(currentPage + 1));
+previousRandomButton.addEventListener('click', () => fetchRandomMovies(currentPage - 1));
+
+// Call the function on page load
+fetchRandomMovies(currentPage);

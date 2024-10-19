@@ -1,27 +1,80 @@
+/* Random Movies Section */
 #randomMovieSection {
     padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    background-color: #f9f9f9; /* Light background for contrast */
+    border-radius: 10px; /* Rounded corners */
+}
+
+/* Movie Item Layout */
+.movie-grid {
+    display: flex; /* Use flexbox for row layout */
+    flex-wrap: wrap; /* Allow wrapping to the next line */
+    justify-content: center; /* Center align items */
+}
+
+/* Individual Movie Item */
+.movie-item {
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px;
+    margin: 10px; /* Space between items */
+    width: 180px; /* Fixed width for consistency */
+    height: 280px; /* Fixed height for uniformity */
+    text-align: center;
+    transition: transform 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+/* Movie Item Hover Effect */
+.movie-item:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on hover */
+}
+
+/* Image Style */
+.movie-item img {
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 200px; /* Limit image height */
+    border-radius: 5px; /* Slightly rounded corners for images */
+}
+
+/* Pagination Style */
+.pagination {
     margin-top: 20px;
-    background-color: #f9f9f9;
+    display: flex; /* Use flexbox for layout */
+    justify-content: space-between; /* Space buttons to edges */
+    align-items: center; /* Center align buttons vertically */
 }
 
-#randomMovieSection img {
-    width: 200px;
-    height: auto;
-    margin-top: 10px;
+/* Pagination Button Style */
+.pagination button {
+    padding: 10px 20px; /* Padding for buttons */
+    margin: 0 10px; /* Margin between buttons */
+    border: none; /* No border */
+    background-color: #007BFF; /* Primary button color */
+    color: white; /* White text */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    font-size: 16px; /* Font size */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-#fetchRandomMovieButton {
-    margin-top: 10px;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+/* Pagination Button Hover Effect */
+.pagination button:hover {
+    background-color: #0056b3; /* Darker shade on hover */
+    transform: translateY(-2px); /* Slight lift effect */
 }
 
-#fetchRandomMovieButton:hover {
-    background-color: #0056b3;
+/* Responsive Styles for Buttons */
+@media (max-width: 600px) {
+    .pagination button {
+        padding: 8px 16px; /* Slightly smaller padding */
+        font-size: 14px; /* Smaller font size on smaller screens */
+    }
+
+    .movie-item {
+        width: 150px; /* Adjust width for smaller screens */
+        height: auto; /* Adjust height for flexibility */
+    }
 }
