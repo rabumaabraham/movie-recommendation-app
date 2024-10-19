@@ -1,7 +1,17 @@
+/* General Body Style */
+body {
+    font-family: 'Poppins', sans-serif; /* Preferred font */
+    background-color: #141414; /* Dark background */
+    color: #ffffff; /* Light text */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Search Section */
 #searchSection {
     padding: 20px;
-    background-color: #f9f9f9; /* Light background for contrast */
+    background-color: #1c1c1c; /* Dark background for contrast */
     border-radius: 10px; /* Rounded corners */
 }
 
@@ -12,21 +22,23 @@
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 10px;
+    background-color: #2c2c2c; /* Match with dark theme */
+    color: #ffffff; /* Light text for input */
 }
 
 /* Search Button */
 #searchButton {
     padding: 10px 20px;
     border: none;
-    background-color: #007BFF;
-    color: white;
+    background-color: #ffcc00; /* Yellow background */
+    color: #000000; /* Black text */
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 
 #searchButton:hover {
-    background-color: #0056b3;
+    background-color: #e6b800; /* Darker yellow on hover */
 }
 
 /* Results Layout */
@@ -38,46 +50,65 @@
 
 /* Individual Movie Item */
 .movie-item {
-    border: 1px solid #ccc;
-    border-radius: 5px;
+    border: 1px solid #ccc; /* Light border */
+    border-radius: 5px; /* Rounded corners */
     padding: 10px;
-    margin: 10px;
+    margin: 10px; /* Space between items */
     width: 180px; /* Fixed width for consistency */
     height: 280px; /* Fixed height for uniformity */
     text-align: center;
     transition: transform 0.3s, box-shadow 0.3s;
+    background-color: #2c2c2c; /* Dark item background */
 }
 
 .movie-item:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05); /* Slightly enlarge on hover */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Shadow on hover */
 }
 
 .movie-item img {
-    width: 100%;
-    height: auto;
-    max-height: 200px;
-    border-radius: 5px;
+    width: 100%; /* Responsive image */
+    height: auto; /* Maintain aspect ratio */
+    max-height: 200px; /* Limit image height */
+    border-radius: 5px; /* Slightly rounded corners for images */
 }
 
 /* Pagination Style */
 .pagination {
-    margin-top: 20px;
-    text-align: center;
+    margin-top: 50px; /* Increased top margin for more space */
+    display: flex; /* Use flexbox for layout */
+    justify-content: center; /* Center buttons */
 }
 
 /* Pagination Button Style */
 .pagination button {
-    padding: 10px 20px;
-    margin: 0 10px;
-    border: none;
-    background-color: #007BFF;
-    color: white;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s;
+    padding: 10px 20px; /* Padding for buttons */
+    margin: 0 5px; /* Reduced margin between buttons */
+    border: none; /* No border */
+    background-color: #ffcc00; /* Yellow background */
+    color: #000000; /* Black text */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
 }
 
 .pagination button:hover {
-    background-color: #0056b3;
+    background-color: #e6b800; /* Darker shade on hover */
+}
+
+/* Responsive Styles */
+@media (max-width: 600px) {
+    .movie-item {
+        width: 100%; /* Full width on small screens */
+        max-width: 300px; /* Limit max width */
+    }
+
+    #searchInput {
+        width: 100%; /* Full width for input */
+    }
+
+    #searchButton {
+        width: 100%; /* Full width for button */
+        margin-top: 10px; /* Space above button */
+    }
 }

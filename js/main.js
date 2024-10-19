@@ -1,36 +1,47 @@
-// main.js
 document.addEventListener("DOMContentLoaded", () => {
-    // Event listeners to handle navigation clicks
-    document.getElementById("popularMoviesNav").addEventListener("click", () => {
-        displaySection("popularMoviesSection");
-    });
-    document.getElementById("genreNav").addEventListener("click", () => {
-        displaySection("genreSection");
-    });
-    document.getElementById("favoritesNav").addEventListener("click", () => {
-        displaySection("favoritesSection");
-    });
-    document.getElementById("randomMovieNav").addEventListener("click", () => {
-        displaySection("randomMovieSection");
-    });
-    document.getElementById("searchNav").addEventListener("click", () => {
-        displaySection("searchSection");
+    console.log("Movie Recommendation App loaded");
+
+    // Select navigation links
+    const popularMoviesNav = document.getElementById('popularMoviesNav');
+    const genreNav = document.getElementById('genreNav');
+    const favoritesNav = document.getElementById('favoritesNav');
+    const randomMovieNav = document.getElementById('randomMovieNav');
+    const searchNav = document.getElementById('searchNav');
+    const homeNav = document.getElementById('homeNav'); // Select the home navigation link
+
+    // Select sections
+    const homeSection = document.getElementById('homeSection');
+    const popularMoviesSection = document.getElementById('popularMoviesSection');
+    const randomMovieSection = document.getElementById('randomMovieSection');
+    const searchSection = document.getElementById('searchSection');
+    const genreSection = document.getElementById('genreSection');
+    const favoritesSection = document.getElementById('favoritesSection'); // Ensure this is defined
+
+    // Function to show the selected section and hide others
+    function showSection(sectionToShow) {
+        // Hide all sections
+        homeSection.style.display = 'none';
+        popularMoviesSection.style.display = 'none';
+        randomMovieSection.style.display = 'none';
+        searchSection.style.display = 'none';
+        if (genreSection) genreSection.style.display = 'none';
+        if (favoritesSection) favoritesSection.style.display = 'none';
+
+        // Show the selected section
+        sectionToShow.style.display = 'block';
+    }
+
+    // Event listeners for navigation
+    homeNav.addEventListener('click', () => {
+        showSection(homeSection); // Show home section only
     });
 
-    // Display popular movies section by default
-    displaySection("popularMoviesSection");
+    popularMoviesNav.addEventListener('click', () => showSection(popularMoviesSection));
+    genreNav.addEventListener('click', () => showSection(genreSection));
+    favoritesNav.addEventListener('click', () => showSection(favoritesSection));
+    randomMovieNav.addEventListener('click', () => showSection(randomMovieSection));
+    searchNav.addEventListener('click', () => showSection(searchSection));
+
+    // Initial setup to show the home section and hide others
+    showSection(homeSection); // Initially show the home section only
 });
-
-// Function to display the selected section and hide others
-function displaySection(sectionId) {
-    const sections = [
-        "popularMoviesSection",
-        "genreSection",
-        "favoritesSection",
-        "randomMovieSection",
-        "searchSection"
-    ];
-    sections.forEach(id => {
-        document.getElementById(id).style.display = id === sectionId ? "block" : "none";
-    });
-}

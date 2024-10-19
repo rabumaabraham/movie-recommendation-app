@@ -1,5 +1,15 @@
+/* General Body Style */
+body {
+    font-family: 'Poppins', sans-serif; /* Preferred font */
+    background-color: #141414; /* Dark background */
+    color: #ffffff; /* Light text */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Random Movies Section */
-#randomMovieSection {
+#randomMoviesSection {
     padding: 20px;
     background-color: #f9f9f9; /* Light background for contrast */
     border-radius: 10px; /* Rounded corners */
@@ -38,32 +48,49 @@
     border-radius: 5px; /* Slightly rounded corners for images */
 }
 
-/* Pagination Style */
+/* Pagination Styles */
 .pagination {
     margin-top: 20px;
     display: flex; /* Use flexbox for layout */
-    justify-content: space-between; /* Space buttons to edges */
-    align-items: center; /* Center align buttons vertically */
+    justify-content: center; /* Center buttons */
 }
 
-/* Pagination Button Style */
-.pagination button {
-    padding: 10px 20px; /* Padding for buttons */
-    margin: 0 10px; /* Margin between buttons */
+/* Hide the previous button by default */
+#previousRandomButton {
+    display: none; /* Initially hidden */
+}
+
+/* Button styles */
+#nextRandomButton,
+#previousRandomButton {
+    background-color: #ffcc00; /* Yellow background */
+    color: #000000; /* Black text */
     border: none; /* No border */
-    background-color: #007BFF; /* Primary button color */
-    color: white; /* White text */
-    border-radius: 5px; /* Rounded corners */
-    cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
+    padding: 10px 20px; /* Padding for buttons */
     font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    border-radius: 5px; /* Rounded corners */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
 }
 
-/* Pagination Button Hover Effect */
-.pagination button:hover {
-    background-color: #0056b3; /* Darker shade on hover */
+/* Hover effects for buttons */
+#nextRandomButton:hover,
+#previousRandomButton:hover {
+    background-color: #e6b800; /* Darker shade on hover */
     transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Centering the Next button */
+#nextRandomButton {
+    display: block; /* Ensure it is displayed */
+    margin: 0; /* No margin */
+}
+
+/* Style for Previous button */
+#previousRandomButton {
+    display: inline-block; /* Show this button in line with the Next button */
+    margin-left: -10px; /* Adjust margin to bring closer */
 }
 
 /* Responsive Styles for Buttons */
@@ -71,10 +98,5 @@
     .pagination button {
         padding: 8px 16px; /* Slightly smaller padding */
         font-size: 14px; /* Smaller font size on smaller screens */
-    }
-
-    .movie-item {
-        width: 150px; /* Adjust width for smaller screens */
-        height: auto; /* Adjust height for flexibility */
     }
 }

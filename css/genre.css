@@ -1,0 +1,104 @@
+/* Genre-Based Recommendations Styles */
+#genreSection {
+    padding: 140px;
+    background-color: #1c1c1c;
+    /* Dark background for contrast */
+    color: #ffffff;
+    /* White text */
+    margin-bottom: 30px;
+    /* Space below the genre section to keep distance from footer */
+}
+
+#genreSection h2 {
+    text-align: center;
+}
+
+#genreSection select {
+    padding: 10px;
+    /* Padding for the select box */
+    margin-right: 10px;
+    /* Space between select and button */
+    border-radius: 5px;
+    /* Rounded corners */
+    border: 1px solid #ccc;
+    /* Border styling */
+}
+
+#fetchGenreMoviesButton {
+    padding: 10px;
+    /* Padding for button */
+    border: none;
+    /* No border */
+    border-radius: 5px;
+    /* Rounded corners */
+    background-color: #e50914;
+    /* Button color similar to Netflix */
+    color: white;
+    /* White text */
+    cursor: pointer;
+    /* Pointer cursor */
+}
+
+#fetchGenreMoviesButton:hover {
+    background-color: #f40612;
+    /* Darker shade on hover */
+}
+
+.movie-grid {
+    display: grid;
+    /* Use grid layout for movie items */
+    grid-template-columns: repeat(4, 1fr);
+    /* 4 columns */
+    gap: 20px;
+    /* Space between items */
+    margin-top: 20px;
+    /* Space above the grid */
+}
+
+.movie-item {
+    background-color: #282828;
+    /* Background for each movie item */
+    padding: 10px;
+    /* Padding around movie item */
+    border-radius: 10px;
+    /* Rounded corners */
+    text-align: center;
+    /* Center align text */
+}
+
+.movie-item img {
+    width: 100%;
+    /* Full width for images */
+    border-radius: 10px;
+    /* Match item corners */
+}
+
+button {
+    padding: 10px 15px;
+    /* Padding for buttons */
+    border: none;
+    /* No border */
+    border-radius: 5px;
+    /* Rounded corners */
+    background-color: #e50914;
+    /* Button color */
+    color: white;
+    /* White text */
+    cursor: pointer;
+    /* Pointer cursor */
+    margin: 0 5px;
+    /* Space between buttons */
+}
+
+button:hover {
+    background-color: #f40612;
+    /* Darker shade on hover */
+}
+
+#previousButton:disabled,
+#nextButton:disabled {
+    background-color: #555;
+    /* Greyed out */
+    cursor: not-allowed;
+    /* Not-allowed cursor */
+}

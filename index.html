@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,65 +12,126 @@
     <link rel="stylesheet" href="css/random.css">
     <link rel="stylesheet" href="css/search.css">
 </head>
+
 <body>
     <header>
+        <div class="header-container">
+            <nav>
+                <ul>
+                    <li><a href="#" id="homeNav">Home</a></li>
+                    <li><a href="#" id="popularMoviesNav">Popular Movies</a></li>
+                    <li><a href="#" id="genreNav">Genre-Based Recommendations</a></li>
+                    <li><a href="#" id="favoritesNav">Favorite</a></li>
+                    <li><a href="#" id="randomMovieNav">Random Movie</a></li>
+                    <li><a href="#" id="searchNav">Search Movies</a></li>
+                </ul>
+            </nav>
+        </div>
         <h1>Movie Recommendation App</h1>
-        <nav>
-            <ul>
-                <li><a href="#" id="popularMoviesNav">Popular Movies</a></li>
-                <li><a href="#" id="genreNav">Genre-Based Recommendations</a></li>
-                <!--<li><a href="#" id="favoritesNav">Favorite Movies</a></li>--> 
-                <li><a href="#" id="randomMovieNav">Random Movie</a></li>
-                <li><a href="#" id="searchNav">Search Movies</a></li>
-            </ul>
-        </nav>
     </header>
 
     <main>
+        <section id="homeSection">
+            <h1>Welcome to the Movie Recommendation App!</h1>
+            <p>Your one-stop destination for discovering amazing movies.</p>
+        </section>
         <!-- Popular Movies Section (initially hidden) -->
         <section id="popularMoviesSection" style="display: none;">
             <h1>Popular Movies</h1>
-            <div id="movie-list"></div>
-            <div class="pagination">
-                <button id="previousButton" style="display: none;">Previous</button>
+
+            <!-- Movie Grid to display the movies -->
+            <div id="movie-list" class="movie-grid">
+                <!-- Movies will be dynamically added here -->
+            </div>
+
+            <!-- Pagination buttons -->
+            <div style="display: flex; justify-content: center; margin: 20px;">
+                <button id="previousButton" style="display: none; margin-right: 10px;">Previous</button>
+                <button id="nextButton" style="display: none;">Next</button>
+            </div>
+        </section>
+
+        <!-- Movie Details Section (Initially Hidden) -->
+        <section id="movie-details"
+            style="display: none; padding: 20px; background-color: #1c1c1c; color: #ffffff; border-radius: 8px; margin-top: 20px;">
+            <!-- Movie details will be injected here -->
+        </section>
+
+
+
+
+
+        <!-- Genre-Based Recommendations Section (Initially Hidden) -->
+
+        <!-- Genre-Based Recommendations Section (Initially Hidden) -->
+        <!-- Genre-Based Recommendations Section (Initially Hidden) -->
+        <section id="genreSection" style="display: none;">
+            <h2>Genre-Based Recommendations</h2>
+            <p>Select a genre to see the best movies available!</p>
+            <div>
+                <select id="genreSelect">
+                    <option value="">Select a Genre</option>
+                    <option value="28">Action</option>
+                    <option value="12">Adventure</option>
+                    <option value="16">Animation</option>
+                    <option value="35">Comedy</option>
+                    <option value="80">Crime</option>
+                    <option value="99">Documentary</option>
+                    <option value="18">Drama</option>
+                    <option value="10751">Family</option>
+                    <option value="14">Fantasy</option>
+                    <option value="36">History</option>
+                    <option value="27">Horror</option>
+                    <option value="10402">Music</option>
+                    <option value="9648">Mystery</option>
+                    <option value="10749">Romance</option>
+                    <option value="878">Science Fiction</option>
+                    <option value="10770">TV Movie</option>
+                    <option value="53">Thriller</option>
+                    <option value="10752">War</option>
+                    <option value="37">Western</option>
+                </select>
+                <button id="fetchGenreMoviesButton">Get Recommendations</button>
+            </div>
+
+            <div id="genre-movie-list" class="movie-grid">
+                <!-- Movies will be dynamically added here -->
+            </div>
+
+            <!-- Pagination buttons -->
+            <div style="display: flex; justify-content: center; margin: 20px;">
+                <button id="previousButton" style="display: none; margin-right: 10px;">Previous</button>
                 <button id="nextButton" style="display: none;">Next</button>
             </div>
         </section>
         
-
-        <!-- Genre Recommendations Section (initially hidden) -->
-        <section id="genreSection" style="display: none;">
-            <h2>Genre-Based Recommendations</h2>
-            <div id="genreDisplay"></div>
+      
         </section>
-
         <!-- Favorites Section (initially hidden) -->
-        <!--<section id="favoritesSection" style="display: none;">
+        <section id="favoritesSection" style="display: none;">
             <h2>Your Favorite Movies</h2>
             <div id="favoritesDisplay"></div>
         </section>
-
-        <!-- 
-        Random Movie Section (initially hidden) -->
-        <!--<section id="randomMovieSection" style="display: none;">
+        
+        <!--Random Movie Section (initially hidden) -->
+            
+        <section id="randomMovieSection" style="display: none;">
             <h2>Random Movie</h2>
-            <div id="randomMovieDisplay"></div>
-        </section> -->
+            <div id="random-movie-list" class="movie-grid"></div>
+            <div class="pagination">
+                <button id="previousRandomButton" style="display: none;">Previous</button>
+                <button id="nextRandomButton" style="display: none;">Next</button>
+            </div>
+        </section>
         
-        
-
-        <!-- Random Movie Section (initially hidden) -->
-<section id="randomMoviesSection" style="display: none;">
-    <h1>Random Movie</h1>
-    <div id="random-movie-list" class="movie-grid"></div>
-    <div class="pagination">
-    <button id="previousRandomButton" style="display: none;">Previous</button>
-    <button id="nextRandomButton" style="display: none;">Next</button>
-    </div>
-</section>
 
 
         <!-- Search Section (initially hidden) -->
+
+
+
+        <!-- Search Section (initially hidden) -->
+
         <section id="searchSection" style="display: none;">
             <h1>Search Movies</h1>
             <input type="text" id="searchInput" placeholder="Type a movie title...">
@@ -82,7 +144,9 @@
         </section>
     </main>
     <!--the footer part-->
-    <footer id="footer"> </footer>
+    <script type="module" src="js/config.js"></script>
+    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/popular.js"></script>
     <!-- Add type="module" to each script tag -->
     <script type="module" src="js/config.js"></script>
     <script type="module" src="js/main.js"></script>
@@ -92,4 +156,5 @@
     <script type="module" src="js/random.js"></script>
     <script type="module" src="js/search.js"></script>
 </body>
+
 </html>
