@@ -12,7 +12,7 @@ const nextRandomButton = document.getElementById('nextRandomButton');
 const previousRandomButton = document.getElementById('previousRandomButton');
 
 let currentPage = 1; // Start at the first page
-const moviesPerPage = 15; // Limit to 15 movies per page
+const moviesPerPage = 18; // Limit to 15 movies per page
 
 // Function to fetch random movies
 async function fetchRandomMovies(page) {

@@ -17,11 +17,14 @@
     <header>
         <div class="header-container">
             <nav>
-                <ul>
+                <div class="menu-icon" id="menuIcon">
+                    &#9776;
+                </div>
+                
+                <ul id="navLinks">
                     <li><a href="#" id="homeNav">Home</a></li>
                     <li><a href="#" id="popularMoviesNav">Popular Movies</a></li>
                     <li><a href="#" id="genreNav">Genre-Based Recommendations</a></li>
-                    <li><a href="#" id="favoritesNav">Favorite</a></li>
                     <li><a href="#" id="randomMovieNav">Random Movie</a></li>
                     <li><a href="#" id="searchNav">Search Movies</a></li>
                 </ul>
@@ -57,13 +60,6 @@
             <!-- Movie details will be injected here -->
         </section>
 
-
-
-
-
-        <!-- Genre-Based Recommendations Section (Initially Hidden) -->
-
-        <!-- Genre-Based Recommendations Section (Initially Hidden) -->
         <!-- Genre-Based Recommendations Section (Initially Hidden) -->
         <section id="genreSection" style="display: none;">
             <h2>Genre-Based Recommendations</h2>
@@ -104,19 +100,12 @@
                 <button id="nextButton" style="display: none;">Next</button>
             </div>
         </section>
-        
-      
-        </section>
-        <!-- Favorites Section (initially hidden) -->
-        <section id="favoritesSection" style="display: none;">
-            <h2>Your Favorite Movies</h2>
-            <div id="favoritesDisplay"></div>
         </section>
         
         <!--Random Movie Section (initially hidden) -->
             
         <section id="randomMovieSection" style="display: none;">
-            <h2>Random Movie</h2>
+            <h2>Random Movies</h2>
             <div id="random-movie-list" class="movie-grid"></div>
             <div class="pagination">
                 <button id="previousRandomButton" style="display: none;">Previous</button>
@@ -124,12 +113,6 @@
             </div>
         </section>
         
-
-
-        <!-- Search Section (initially hidden) -->
-
-
-
         <!-- Search Section (initially hidden) -->
 
         <section id="searchSection" style="display: none;">
@@ -142,12 +125,27 @@
                 <button id="nextSearchButton" style="display: none;">Next</button>
             </div>
         </section>
+        <footer>
+            <!--the footer part-->
+            <div class="footer-content">
+                <p>&copy; 2024 Movie Recommendation App. All rights reserved.</p>
+                <p>Developed by
+                    <a href="https://github.com/rabumaabraham" target="_blank"
+                        onmouseover="showTooltip(event, 'https://github.com/rabuma')">Rabuma
+                        <span class="tooltip">GitHub Profile</span>
+                    </a> and
+                    <a href="https://github.com/itsme442" target="_blank"
+                        onmouseover="showTooltip(event, 'https://github.com/elias')">Elias
+                        <span class="tooltip">GitHub Profile</span>
+                    </a>
+                </p>
+            </div>
+        </footer>
     </main>
-    <!--the footer part-->
+    <!-- Add type="module" to each script tag -->
     <script type="module" src="js/config.js"></script>
     <script type="module" src="js/main.js"></script>
     <script type="module" src="js/popular.js"></script>
-    <!-- Add type="module" to each script tag -->
     <script type="module" src="js/config.js"></script>
     <script type="module" src="js/main.js"></script>
     <script type="module" src="js/popular.js"></script>

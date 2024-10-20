@@ -1,0 +1,80 @@
+[33mcommit fa1d9e40728fa52590dadd23af17fa5f55b24159[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m)[m
+Merge: d5c1199 2c3b383
+Author: itsme442 <eliaszeruasegahegn@gmail.com>
+Date:   Sat Oct 19 16:37:17 2024 +0200
+
+    final touch
+
+[33mcommit d5c1199ab1838191ddfdc3e109aaa5f60c887157[m
+Author: itsme442 <eliaszeruasegahegn@gmail.com>
+Date:   Sat Oct 19 13:26:27 2024 +0200
+
+    .2
+
+[33mcommit 2c3b383e3bc209cf237ad3a0dad120765724c712[m
+Author: rabuma abraham <iamrabuma@gmail.com>
+Date:   Fri Oct 18 16:47:26 2024 +0200
+
+    Updated CSS and JavaScript files, added images directory
+
+[33mcommit 893c604283ab4fd86ffb51302b30fb210fb8b123[m
+Author: rabuma abraham <iamrabuma@gmail.com>
+Date:   Mon Oct 14 17:49:10 2024 +0200
+
+    add .gitignore to exclude config.js
+
+[33mcommit 860e938bfb9948c594b685856767de3d22191cb6[m
+Author: rabuma abraham <iamrabuma@gmail.com>
+Date:   Mon Oct 14 17:26:15 2024 +0200
+
+    Remove config.js from the repository
+
+[33mcommit c2f9a92ff6cd5725b68ccfdb909aa852b463725c[m
+Merge: 27d0699 5a11ae3
+Author: rabuma abraham <iamrabuma@gmail.com>
+Date:   Mon Oct 14 16:48:22 2024 +0200
+
+    merge changes from remote main
+
+[33mcommit 27d0699cd627de50a074afaedff22ec88d036d35[m
+Author: rabuma abraham <iamrabuma@gmail.com>
+Date:   Mon Oct 14 16:40:06 2024 +0200
+
+    initial code for radom
+
+[33mcommit 5a11ae33a169712677994fde09fe5c2283c11745[m
+Author: itsme442 <eliaszeruasegahegn@gmail.com>
+Date:   Mon Oct 14 13:26:43 2024 +0200
+
+    id added to the footer tag
+
+[33mcommit 396d42546f8d9bf52fc4199b201b32d89a307c77[m
+Merge: 3b4cbf2 a2e1528
+Author: rabuma abraham <iamrabuma@gmail.com>
+Date:   Mon Oct 14 13:09:26 2024 +0200
+
+    Concluded merge after resolving conflicts
+
+[33mcommit 3b4cbf293136da09db286862662ebf3f09e117ad[m
+Author: rabuma abraham <iamrabuma@gmail.com>
+Date:   Mon Oct 14 12:59:49 2024 +0200
+
+    css global variable declared
+
+[33mcommit a2e1528f85151b8d80d5516a86724bdb879dbbf8[m
+Author: itsme442 <eliaszeruasegahegn@gmail.com>
+Date:   Mon Oct 14 12:48:56 2024 +0200
+
+    added footer tag
+
+[33mcommit ee2c59214b13713c21f25c97e2115cb64b3d78ce[m
+Author: Rabuma Abraham Bekele <iamrabuma@gmail.com>
+Date:   Mon Oct 14 04:57:59 2024 +0200
+
+    README.md
+
+[33mcommit 61742862c4eeff1c992b732aa9329c7ab974ea55[m
+Author: rabuma abraham <iamrabuma@gmail.com>
+Date:   Mon Oct 14 04:53:41 2024 +0200
+
+    initial push

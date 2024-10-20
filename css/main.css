@@ -130,7 +130,6 @@ nav ul li a:hover {
     height: 100vh;
     /* Full viewport height */
     background-image: url('/images/poster1.jpg');
-    /* Replace with your image path */
     background-size: cover;
     /* Cover full section */
     background-position: center;
@@ -280,3 +279,54 @@ footer a:hover .tooltip {
         /* Adjust footer font size */
     }
 }
+
+/* */
+/* Style for the navigation */
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav ul li a {
+    text-decoration: none;
+    padding: 10px;
+    color: #fff;
+}
+
+.menu-icon {
+    display: none;
+    font-size: 30px;
+    cursor: pointer;
+}
+
+/* Hide the menu links initially on small screens */
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        background-color: #333;
+        width: 100%;
+        position: absolute;
+        top: 60px;
+        left: 0;
+    }
+
+    nav ul li {
+        margin: 10px 0;
+    }
+
+    .menu-icon {
+        display: block;
+    }
+}
+
+/* Show the menu links when the menu icon is clicked */
+nav ul.active {
+    display: block;
+}
+
+
