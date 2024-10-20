@@ -31,27 +31,27 @@ document.addEventListener("DOMContentLoaded", () => {
     // Event listeners for navigation
     homeNav.addEventListener('click', () => {
         showSection(homeSection); // Show home section only
-        closeNav(); // Close nav after selection
+        closeNavIfMobile(); // Close nav if in mobile view
     });
 
     popularMoviesNav.addEventListener('click', () => {
         showSection(popularMoviesSection);
-        closeNav(); // Close nav after selection
+        closeNavIfMobile(); // Close nav if in mobile view
     });
 
     genreNav.addEventListener('click', () => {
         showSection(genreSection);
-        closeNav(); // Close nav after selection
+        closeNavIfMobile(); // Close nav if in mobile view
     });
 
     randomMovieNav.addEventListener('click', () => {
         showSection(randomMovieSection);
-        closeNav(); // Close nav after selection
+        closeNavIfMobile(); // Close nav if in mobile view
     });
 
     searchNav.addEventListener('click', () => {
         showSection(searchSection);
-        closeNav(); // Close nav after selection
+        closeNavIfMobile(); // Close nav if in mobile view
     });
 
     // Initial setup to show the home section and hide others
@@ -64,6 +64,13 @@ document.addEventListener("DOMContentLoaded", () => {
     menuIcon.addEventListener('click', () => {
         navLinks.style.display = (navLinks.style.display === 'block') ? 'none' : 'block';
     });
+
+    // Function to close the navigation menu if in mobile view
+    function closeNavIfMobile() {
+        if (window.innerWidth <= 768) { // Adjust this breakpoint as needed
+            closeNav(); // Hide nav links only on mobile
+        }
+    }
 
     // Function to close the navigation menu
     function closeNav() {
