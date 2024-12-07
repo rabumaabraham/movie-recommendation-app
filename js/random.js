@@ -11,25 +11,26 @@ const randomMovieList = document.getElementById('random-movie-list');
 const nextRandomButton = document.getElementById('nextRandomButton');
 const previousRandomButton = document.getElementById('previousRandomButton');
 
-let currentPage = 1; // Start at the first page
-const moviesPerPage = 18; // Limit to 15 movies per page
+if (!randomMoviesSection) {
+    console.error("randomMoviesSection element is not found in the DOM.");
+} else {
+    console.log("randomMoviesSection found:", randomMoviesSection);
+}
 
-// Function to fetch random movies
+let currentPage = 1; // Start at the first page
+const moviesPerPage = 18; // Limit to 18 movies per page
+
 async function fetchRandomMovies(page) {
     try {
         const response = await fetch(`${BASE_URL}/movie/popular?api_key=${TMDB_API_KEY}&language=en-US&page=${page}`);
 
-        // Check if the response is okay (status code 200)
         if (!response.ok) {
             throw new Error('Network response was not ok: ' + response.statusText);
         }
 
         const data = await response.json();
-
-        // Clear existing movies
         randomMovieList.innerHTML = '';
 
-        // Shuffle and select movies for the current page
         const shuffledMovies = data.results.sort(() => 0.5 - Math.random()).slice(0, moviesPerPage);
         shuffledMovies.forEach(movie => {
             const movieItem = document.createElement('div');
@@ -42,28 +43,20 @@ async function fetchRandomMovies(page) {
             randomMovieList.appendChild(movieItem);
         });
 
-        // Update pagination buttons
         updateRandomPagination(data.page, data.total_pages);
-
-        // Show the random movies section
         randomMoviesSection.style.display = 'block';
-
     } catch (error) {
         console.error('Error fetching random movies:', error);
     }
 }
 
-// Function to update pagination buttons
 function updateRandomPagination(current, total) {
-    currentPage = current; // Update the current page
-
-    previousRandomButton.style.display = current > 1 ? 'block' : 'none'; // Show or hide the previous button
-    nextRandomButton.style.display = current < total ? 'block' : 'none'; // Show or hide the next button
+    currentPage = current;
+    previousRandomButton.style.display = current > 1 ? 'block' : 'none';
+    nextRandomButton.style.display = current < total ? 'block' : 'none';
 }
 
-// Event listeners for pagination buttons
 nextRandomButton.addEventListener('click', () => fetchRandomMovies(currentPage + 1));
 previousRandomButton.addEventListener('click', () => fetchRandomMovies(currentPage - 1));
 
-// Call the function on page load
 fetchRandomMovies(currentPage);
