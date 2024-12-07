@@ -125,26 +125,22 @@ nav ul li a:hover {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    /* Start aligning items from the top */
     align-items: center;
-    height: 100vh;
-    /* Full viewport height */
-    background-image: url('/images/poster1.jpg');
-    background-size: cover;
-    /* Cover full section */
-    background-position: center;
+    height: 100vh; /* Full viewport height */
+    background-size: cover; /* Ensure the background covers the whole section */
+    background-position: center center; /* Ensure the image is centered */
     color: #ffcc00;
-    /* Text color */
     text-align: center;
-    /* Center text */
-    padding-top: 20vh;
-    /* Pull the content down */
+    padding-top: 20vh; /* Pull the content down */
 }
+
+
 
 #homeSection h1 {
     font-size: 3em;
     /* Header font size */
     margin: 0;
+    
 }
 
 #homeSection p {
@@ -327,6 +323,11 @@ nav ul li a {
 /* Show the menu links when the menu icon is clicked */
 nav ul.active {
     display: block;
+}
+
+
+.headerTitle{
+    color: #ffcc00;;
 }
 
 

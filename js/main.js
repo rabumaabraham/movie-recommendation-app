@@ -85,3 +85,61 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     });
 });
+
+///
+
+document.addEventListener("DOMContentLoaded", () => {
+    console.log("Movie Recommendation App loaded");
+
+    // Call the function to fetch action movies
+    fetchActionMovies();
+});
+
+// Import your API key from config.js
+import { TMDB_API_KEY } from './config.js';
+
+const BASE_URL = 'https://api.themoviedb.org/3';
+const homeSection = document.getElementById('homeSection');
+let currentMovieIndex = 0; // To track the current movie being displayed
+let moviePosters = []; // Array to store movie posters
+
+// Function to fetch action movies
+async function fetchActionMovies() {
+    try {
+        const response = await fetch(`${BASE_URL}/discover/movie?api_key=${TMDB_API_KEY}&with_genres=28&language=en-US&page=1`);
+
+        // Check if the response is okay (status code 200)
+        if (!response.ok) {
+            throw new Error('Network response was not ok: ' + response.statusText);
+        }
+
+        const data = await response.json();
+
+        // Store the movie posters in an array
+        moviePosters = data.results.map(movie => `https://image.tmdb.org/t/p/w500${movie.poster_path}`);
+
+        // Set the first movie poster as the background
+        setBackgroundImage();
+
+        // Start changing the background every 5 seconds
+        setInterval(changeBackground, 5000);
+
+    } catch (error) {
+        console.error('Error fetching action movies:', error);
+    }
+}
+
+// Function to set the background image to the current movie poster
+function setBackgroundImage() {
+    if (moviePosters.length > 0) {
+        homeSection.style.backgroundImage = `url('${moviePosters[currentMovieIndex]}')`;
+    }
+}
+
+// Function to change the background image to the next movie poster
+function changeBackground() {
+    // Move to the next movie in the list
+    currentMovieIndex = (currentMovieIndex + 1) % moviePosters.length; // Loop back to the first movie after reaching the end
+    setBackgroundImage();
+}
+
